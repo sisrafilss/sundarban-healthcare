@@ -7,10 +7,12 @@ import Register from './pages/Login/Register/Register';
 import Header from './pages/Shared/Header/Header';
 import Home from './pages/Home/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
+import About from './pages/About/About/About';
+import Services from './pages/Services/Services/Services';
+import Contact from './pages/Contact/Contact/Contact';
 
 function App() {
   return (
-    <div className="App">
       <AuthProvider>
         <Router>
           <Header />
@@ -21,13 +23,21 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/services">
+              <Services />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
             <Route path="*">
               <NotFound />
             </Route>
           </Switch>
         </Router>
       </AuthProvider>
-    </div>
   );
 }
 

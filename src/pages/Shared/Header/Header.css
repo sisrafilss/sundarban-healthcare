@@ -1,0 +1,20 @@
+.logo-text {
+    color: #EA6428;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.nav-items-container {
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.nav-item {
+    color: rgba(255, 255, 255, 0.804) !important;
+}
+.nav-item:hover {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
