@@ -1,0 +1,21 @@
+.page-top-title {
+    background-image: url(../../../images/bg_title.jpg);
+    background-size: cover;
+}
+
+.bg_transparent:after {
+    background-color: #2986e2cc;
+}
+.bg_transparent:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+.title {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,38 @@
+.card {
+    overflow: hidden;
+}
+
+.card-img {
+    transition: 0.3s all ease;
+    
+}
+.card-img:hover {
+    transform: scale(1.1);
+    overflow: hidden;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card:hover .card-title {
+    color: #F26529;
+    transition: 0.3s all ease;
+}
+
+.card-description {
+    color: #777;
+}
+
+.read-mroe-btn {
+    padding: 7px 10px;
+    text-transform: uppercase !important;
+    font-size: 0.9rem;
+}
+
+.card:hover .read-mroe-btn {
+    background-color: #f26529;
+    color: rgba(255, 255, 255, 0.76);
+    text-decoration: underline;
+    /* font-size: 0.8rem; */
+}
