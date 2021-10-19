@@ -1,3 +1,7 @@
+.nav-bg {
+    background-color: #222222 !important;
+}
+
 .logo-text {
     color: #EA6428;
     font-weight: 500;
@@ -15,6 +19,7 @@
 .nav-item {
     color: rgba(255, 255, 255, 0.804) !important;
 }
+
 .nav-item:hover {
     color: rgba(255, 255, 255, 0.9) !important;
 }

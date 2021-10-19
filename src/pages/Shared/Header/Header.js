@@ -1,13 +1,17 @@
 import React from 'react';
 import { Container, Form, FormControl, Nav, Navbar, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Header.css'
 
 const Header = () => {
+
+    const { user, logOut } = useAuth();
+
     return (
         <>
-            <Navbar ollapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Container>
+            <Navbar className="nav-bg" ollapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Container fluid>
                     <Navbar.Brand href="#home"> <span className="logo-text">Sundarban</span> Healthcare </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -16,8 +20,15 @@ const Header = () => {
                             <Nav.Link as={Link} className="nav-item" to="/about">About</Nav.Link>
                             <Nav.Link as={Link} className="nav-item" to="/services">Services</Nav.Link>
                             <Nav.Link as={Link} className="nav-item" to="/contact">Contact</Nav.Link>
-                            <Nav.Link as={Link} className="nav-item" to="/login">Login</Nav.Link>
+                            { user.email ?  <button onClick={logOut} className="rounded-3" style={{padding: '0px 10px'}}>Logout</button> :
+                            <Nav.Link as={Link} className="nav-item" to="/login">Login</Nav.Link>}
                         </Nav>
+
+                        { user.email && <div className="mx-3">
+                            <img style={{width: '40px', height: '40px', borderRadius: '50%'}} src={user?.photoURL} alt="" />
+                            <span className="text-light"> {user?.displayName} </span>
+                        </div>}
+
                         <Form className="d-flex">
                             <FormControl
                                 type="search"
