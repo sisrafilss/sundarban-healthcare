@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 
-const useServices = () => {
+const useServices = (dataSource) => {
 
-    const [services, setServices] = useState();
+    const [services, setServices] = useState([]);
 
     useEffect( () => {
-        fetch('./services.json')
+        fetch(dataSource)
         .then(res => res.json())
         .then(data => setServices(data));
     }, []);

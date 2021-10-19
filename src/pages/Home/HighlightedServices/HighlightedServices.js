@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useServices from '../../../hooks/useServices';
 import SectionTop from '../../Shared/SectionTop/SectionTop';
 import SingleService from '../../Shared/SingleService/SingleService';
@@ -7,7 +8,7 @@ import './HighlightedServices.css'
 
 const HighlightedServices = () => {
 
-    const services = useServices();
+    const services = useServices('./services2.json');
 
     const sectionTop = {
         title: 'Services We offer',
@@ -20,12 +21,15 @@ const HighlightedServices = () => {
             <Container>
                 <Row xs={1} md={3} className="g-4">
                     {
-                        services.map(service => <SingleService 
-                                key={service.id}
-                                service={service}
-                            /> )
+                        services.map(service => <SingleService
+                            key={service.id}
+                            service={service}
+                        />)
                     }
                 </Row>
+                <div class="mt-5 d-grid">
+                    <Link className="btn btn-load-more" to="/services">All Services</Link>
+                </div>
             </Container>
         </div>
     );

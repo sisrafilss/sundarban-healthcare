@@ -1,0 +1,9 @@
+.btn-load-more {
+    display: block !important;
+    background-color: #e3e7e9;
+}
+
+.btn-load-more:hover {
+    background-color: #f26529;
+    color: rgba(255, 255, 255, 0.76);
+}

@@ -8,7 +8,7 @@ import './Services.css'
 
 const Services = () => {
 
-    const services = useServices();
+    const services = useServices('./services.json');
     console.log(services);
 
     const pageTopTitle = {
