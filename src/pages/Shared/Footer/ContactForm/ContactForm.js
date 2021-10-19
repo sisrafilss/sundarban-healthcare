@@ -6,7 +6,7 @@ const ContactForm = () => {
             <h4 className="my-4">Contact Form!</h4>
             <div >
                 <div className="mb-3">
-                    <input type="email" className="form-control" id="email" placeholder="Full name" />
+                    <input type="name" className="form-control" id="name" placeholder="Full name" />
                 </div>
                 <div className="mb-3">
                     <input type="email" className="form-control" id="email" placeholder="Email address" />

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
+import PageTopTitle from '../../Shared/PageTopTitle/PageTopTitle';
+import './Login.css'
 
 const Login = () => {
 
@@ -11,28 +13,53 @@ const Login = () => {
 
 
     console.log(user);
+
+    const pageTopTitle = {
+        title: 'Please Login!',
+        subtitle: 'Login with your preferred method and unlock all features!'
+    }
+
     return (
-        <div>
+        <>
             <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
-
-                    <input defaultValue="" {...register("email", { required: true })} placeholder="Email" />
-                    {errors.email && <span>This field is required</span>}
-
-                    <input {...register("password", { required: true })} placeholder="Password" />
-
-                    {errors.password && <span>This field is required</span>}
-
-                    <input type="submit" value="Login" />
-                </form>
+                <PageTopTitle pageTopTitle={pageTopTitle} />
             </div>
-            <div>
-                <h2>This is Login Page!</h2>
-                <button onClick={signInUsingGoogle}>Google Sign-In</button>
-                <button onClick={logOut}>Logout</button>
-                <h4>Login Status: {user?.displayName ? `Looged in as ${user.displayName}` : 'Loged Out'} </h4>
+
+            <div className="form-wrapper">
+
+                <div className="form-container">
+                    <h2 className="mb-4 fw-bold text-center">Sign In</h2>
+                    <div>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+
+                            <div className="mb-3">
+                                <input defaultValue="" {...register("email", { required: true })} placeholder="Email address" type="email" className="form-control" id="email" />
+                                {errors.email && <span className="text-warning">This field is required</span>}
+                            </div>
+
+                            <div className="mb-3">
+                                <input  {...register("password", { required: true })} placeholder="Password" type="password" className="form-control" id="password" />
+                                {errors.password && <span className="text-warning">This field is required</span>}
+                            </div>
+                            <button type="submit" class="btn btn-submit">Login</button>
+                        </form>
+                    </div>
+
+                    <div className="mt-4">
+                        <p className="text-center">------------------ or sign in using -------------</p>
+                        <div className="d-grid gap-2 col-6 mx-auto">
+                            <button className=" btn-danger btn btn-third-party-login btn" onClick={signInUsingGoogle}><i class="fab fa-google"></i> Sign in with Google</button>
+                        </div>
+
+
+                    </div>
+
+                </div>
             </div>
-        </div>
+
+
+
+        </>
     );
 };
 

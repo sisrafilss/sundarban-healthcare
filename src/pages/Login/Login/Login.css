@@ -1,0 +1,41 @@
+.form-wrapper {
+    background-color: rgb(51, 51, 51);
+}
+
+.form-container {
+    margin-right: 35%;
+    margin-left: 35%;
+    color: #fff;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.btn-submit {
+    background-color: #EA6428;
+    padding: 7px 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    color: #fff !important;
+}
+
+.btn-third-party-login {
+    background-color: #EA6428 !important;
+}
+
+@media only screen and (min-width: 521px) and (max-width: 768px) {
+    .form-container {
+        margin-right: 20%;
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .form-container {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
+
