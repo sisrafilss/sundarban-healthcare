@@ -12,6 +12,7 @@ import Services from './pages/Services/Services/Services';
 import Contact from './pages/Contact/Contact/Contact';
 import ServiceDetail from './pages/Shared/Header/ServiceDetail/ServiceDetail';
 import Footer from './pages/Shared/Footer/Footer/Footer';
+import PrivatRoute from './PrivatRoute/PrivatRoute';
 
 function App() {
   return (
@@ -31,9 +32,9 @@ function App() {
           <Route path="/services">
             <Services />
           </Route>
-          <Route path="/service/:serviceId">
+          <PrivatRoute path="/service/:serviceId">
             <ServiceDetail />
-          </Route>
+          </PrivatRoute>
           <Route path="/contact">
             <Contact />
           </Route>

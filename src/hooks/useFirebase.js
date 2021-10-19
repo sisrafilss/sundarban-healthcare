@@ -69,13 +69,9 @@ const useFirebase = () => {
     // handle sign in with google
     const signInUsingGoogle = () => {
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                setUser(result.user);
-                setError('');
-            }).catch((error) => {
-                setError(error.message)
-            });
+
+        return signInWithPopup(auth, googleProvider)
+             
     }
 
     // getting current user by observing Auth object

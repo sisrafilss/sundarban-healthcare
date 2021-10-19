@@ -17,7 +17,7 @@ const SingleService = ({ service }) => {
                         {description.slice(0, 150) + ' ' } 
                         [...]
                     </Card.Text>
-                    <Link to={`/service/${id}`} className="btn btn-outline read-mroe-btn">Read More</Link>
+                    <Link to={`/service/${id}`} className="btn btn-outline read-mroe-btn fw-bold">Details</Link>
                 </Card.Body>
 
             </Card>
