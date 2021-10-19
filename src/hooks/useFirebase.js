@@ -24,8 +24,9 @@ const useFirebase = () => {
     //Create a password-based account
     const registerNewUserUsingEmailPassword = (name, email, password) => {
 
-
-
+        if(!passwordCehck(password)) {
+            return;
+        }
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -54,15 +55,9 @@ const useFirebase = () => {
     }
 
     const loginUserUsingEmailPassword = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                // Signed in 
-                setUser(result.user);
-                setError('');
-            })
-            .catch((error) => {
-                setError(error.message);
-            });
+
+        return signInWithEmailAndPassword(auth, email, password)
+            
     }
 
 
@@ -95,13 +90,26 @@ const useFirebase = () => {
         });
     }
 
+    // Basic Password Checker
+    const passwordCehck = (password) => {
+        if (password.length < 6) {
+            setError('Password must be more than 6 characters.');
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     return {
         user,
         error,
         registerNewUserUsingEmailPassword,
         loginUserUsingEmailPassword,
         signInUsingGoogle,
-        logOut
+        logOut,
+        setUser,
+        setError
     }
 }
 

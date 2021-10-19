@@ -10,7 +10,7 @@ const SingleService = ({ service }) => {
     return (
         <Col className="">
             <Card className="shadow border-0 card">
-                <Card.Img class="card-img" variant="top" src={thumbnail} />
+                <Card.Img className="card-img" variant="top" src={thumbnail} />
                 <Card.Body className="mt-4">
                     <Card.Title className="card-title"> {title} </Card.Title>
                     <Card.Text className="card-description">

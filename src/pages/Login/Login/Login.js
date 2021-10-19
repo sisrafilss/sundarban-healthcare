@@ -8,11 +8,11 @@ import './Login.css'
 const Login = () => {
 
     // Destructing the from useAuth custom hook
-    const { loginUserUsingEmailPassword, signInUsingGoogle, user, error } = useAuth();
+    const { loginUserUsingEmailPassword, signInUsingGoogle, user, error, setUser, setError } = useAuth();
 
     // It is for react hook form
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => loginUserUsingEmailPassword(data.email, data.password);
+    const onSubmit = data => handleEmailLogin(data.email, data.password);
 
     // Page top Title props
     const pageTopTitle = {
@@ -23,11 +23,30 @@ const Login = () => {
     // handing redirect the page from where user send this page for login.
     const location = useLocation()
     const history = useHistory();
-    const redirect_uri = location.state?.from || '/shop';
+    const redirect_uri = location?.state?.from || '/home';
 
     const handleGoogleLogin = () => {
         signInUsingGoogle()
-            .then(() => { history.push(redirect_uri) }).catch(() => { });
+            .then((result) => {
+                setUser(result.user);
+                setError('');
+                history.push(redirect_uri);
+            }).catch(() => {
+                setError(error?.message);
+            });
+    }
+
+    const handleEmailLogin = (email, password) => {
+        loginUserUsingEmailPassword(email, password)
+            .then((result) => {
+                // Signed in 
+                setUser(result?.user);
+                setError('');
+                history.push(redirect_uri);
+            })
+            .catch((error) => {
+                setError(error?.message);
+            });
     }
 
     return (
@@ -55,7 +74,7 @@ const Login = () => {
                                             <input  {...register("password", { required: true })} placeholder="Password" type="password" className="form-control" id="password" />
                                             {errors.password && <span className="text-warning">This field is required</span>}
                                         </div>
-                                        <button type="submit" class="btn btn-submit">Login</button>
+                                        <button type="submit" className="btn btn-submit">Login</button>
                                         <p className="login-error mt-3 text-center"> {error} </p>
                                     </form>
                                 </div>
@@ -63,7 +82,7 @@ const Login = () => {
                                 <div className="mt-4">
                                     <p className="text-center">------------------ or sign in using -------------</p>
                                     <div className="d-grid gap-2 col-6 mx-auto">
-                                        <button className=" btn-danger btn btn-third-party-login btn" onClick={handleGoogleLogin}><i class="fab fa-google"></i> Sign in with Google</button>
+                                        <button className=" btn-danger btn btn-third-party-login btn" onClick={handleGoogleLogin}><i className="fab fa-google"></i> Sign in with Google</button>
                                     </div>
                                     <p className="text-center mt-3" style={{ color: '#ccc' }}>Are you new user? <Link style={{ color: '#fff', textDecoration: 'underline' }} to="/register">Register</Link> </p>
 
@@ -71,7 +90,7 @@ const Login = () => {
                             </div>
                         ) : (
                             <div>
-                                <h2 class="text-warning display-1"> You are already Logged In. </h2>
+                                <h2 className="text-warning display-1"> You are already Logged In. </h2>
                             </div>
                         )
                     }

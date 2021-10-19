@@ -27,7 +27,7 @@ const HighlightedServices = () => {
                         />)
                     }
                 </Row>
-                <div class="mt-5 d-grid">
+                <div className="mt-5 d-grid">
                     <Link className="btn btn-load-more" to="/services">All Services</Link>
                 </div>
             </Container>

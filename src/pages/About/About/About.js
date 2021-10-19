@@ -18,7 +18,7 @@ const About = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 col-12">
-                            <h2 style={{fontWeight: '500'}} class="display-6 mb-4">We Offer
+                            <h2 style={{fontWeight: '500'}} className="display-6 mb-4">We Offer
                             <br />
                              <span className="fw-bold">Fast & Reliable</span> 
                              <br />

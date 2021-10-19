@@ -31,7 +31,7 @@ const Slider = () => {
                         <br />
                         <p className="slide-short-description mt-0 mb-1 p-2 d-inline-block rounded">We stand ahead in quality and integrity</p>
                         <br />
-                        <Link to="/services" className="btn-regular rounded-pill btn mt-0">View Services &nbsp; <i class="fas fa-plus"></i></Link>
+                        <Link to="/services" className="btn-regular rounded-pill btn mt-0">View Services &nbsp; <i className="fas fa-plus"></i></Link>
 
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -48,7 +48,7 @@ const Slider = () => {
                         <br />
                         <p className="slide-short-description mt-0 mb-1 p-2 d-inline-block rounded">We stand ahead in quality and integrity</p>
                         <br />
-                        <Link to="/services" className="btn-regular rounded-pill btn mt-0">View Services &nbsp; <i class="fas fa-plus"></i></Link>
+                        <Link to="/services" className="btn-regular rounded-pill btn mt-0">View Services &nbsp; <i className="fas fa-plus"></i></Link>
 
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -65,7 +65,7 @@ const Slider = () => {
                         <br />
                         <p className="slide-short-description mt-0 mb-1 p-2 d-inline-block rounded">We stand ahead in quality and integrity</p>
                         <br />
-                        <Link to="/services" className="btn-regular rounded-pill btn mt-0">View Services &nbsp; <i class="fas fa-plus"></i></Link>
+                        <Link to="/services" className="btn-regular rounded-pill btn mt-0">View Services &nbsp; <i className="fas fa-plus"></i></Link>
 
                     </Carousel.Caption>
                 </Carousel.Item>

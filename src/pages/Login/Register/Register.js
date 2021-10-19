@@ -6,7 +6,7 @@ import PageTopTitle from '../../Shared/PageTopTitle/PageTopTitle';
 
 const Register = () => {
 
-    const { registerNewUserUsingEmailPassword, signInUsingGoogle } = useAuth();
+    const { registerNewUserUsingEmailPassword, signInUsingGoogle, error, user } = useAuth();
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => registerNewUserUsingEmailPassword(data.name, data.email, data.password);
@@ -44,7 +44,9 @@ const Register = () => {
                                 {errors.password && <span>This field is required</span>}
                             </div>
 
-                            <button type="submit" class="btn btn-submit">Register</button>
+                            <button type="submit" className="btn btn-submit">Register</button>
+                            <p className="login-error mt-3 text-center"> {error} </p>
+                            { user.email &&  <p className="login-success mt-3 text-center"> Registration Successfull! </p>}
 
                         </form>
                     </div>
@@ -52,7 +54,7 @@ const Register = () => {
                     <div className="mt-4">
                         <p className="text-center">------------------ or sign in using -------------</p>
                         <div className="d-grid gap-2 col-6 mx-auto">
-                            <button className=" btn-danger btn btn-third-party-login btn" onClick={signInUsingGoogle}><i class="fab fa-google"></i> Sign in with Google</button>
+                            <button className=" btn-danger btn btn-third-party-login btn" onClick={signInUsingGoogle}><i className="fab fa-google"></i> Sign in with Google</button>
                         </div>
                         <p className="text-center mt-3" style={{ color: '#ccc' }}>Already have an Account? <Link style={{ color: '#fff', textDecoration: 'underline' }} to="/login">Login</Link> </p>
 
