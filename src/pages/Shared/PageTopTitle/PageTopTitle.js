@@ -11,12 +11,12 @@ const PageTopTitle = ({ pageTopTitle }) => {
                 <div className="container">
                     <div className="title">
                         <h1 className="text-light fw-bold"> {title} </h1>
-                        <p className="text-light lead"> {subtitle} </p>
+                        <p style={{fontWeight: '400'}} className="text-light lead"> {subtitle} </p>
                     </div>
                 </div>
             </div>
         </div>
     );
-};
+}; 
 
 export default PageTopTitle;

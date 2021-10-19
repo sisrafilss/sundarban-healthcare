@@ -1,12 +1,11 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import './SingleService.css'
-// import service1 from '../../../images/services/slide-2.jpg'
+import { Link, useParams } from "react-router-dom";
 
 const SingleService = ({ service }) => {
 
-    const { title, thumbnail, description } = service;
-
+    const { id, title, thumbnail, description } = service;
 
     return (
         <Col className="">
@@ -18,7 +17,7 @@ const SingleService = ({ service }) => {
                         {description.slice(0, 150) + ' ' } 
                         [...]
                     </Card.Text>
-                    <button className="btn btn-outline read-mroe-btn">Read More</button>
+                    <Link to={`/service/${id}`} className="btn btn-outline read-mroe-btn">Read More</Link>
                 </Card.Body>
 
             </Card>

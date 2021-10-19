@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const useServices = (dataSource) => {
+const useServices = (dataSource = './services.json') => {
 
     const [services, setServices] = useState([]);
 
