@@ -11,6 +11,7 @@ import About from './pages/About/About/About';
 import Services from './pages/Services/Services/Services';
 import Contact from './pages/Contact/Contact/Contact';
 import ServiceDetail from './pages/Shared/Header/ServiceDetail/ServiceDetail';
+import Footer from './pages/Shared/Footer/Footer/Footer';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </AuthProvider>
   );

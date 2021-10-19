@@ -1,0 +1,13 @@
+.footer-container {
+    background-color: #222222;
+    padding: 70px 0;
+}
+
+.footer-container h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-weight: 600
+}
+
+.footer-container p, .footer-container>p>a {
+    color: #ccc;
+}
