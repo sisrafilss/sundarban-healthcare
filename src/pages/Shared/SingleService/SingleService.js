@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import './SingleService.css'
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SingleService = ({ service }) => {
 

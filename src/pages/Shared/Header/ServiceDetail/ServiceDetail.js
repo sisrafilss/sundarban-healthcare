@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router';
-import useServices from '../../../../hooks/useServices';
 import PageTopTitle from '../../PageTopTitle/PageTopTitle';
 import servicesList from './serviceList';
 import './ServiceDetail.css';

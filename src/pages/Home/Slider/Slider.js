@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Carousel, Button } from 'react-bootstrap';
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import slide1 from '../../../images/slider/slide-1.jpg';
 import slide2 from '../../../images/slider/slide-2.jpg';
@@ -8,13 +8,6 @@ import './Slider.css'
 
 
 const Slider = () => {
-
-    const [index, setIndex] = useState(0);
-
-    const handleSelect = (selectedIndex, e) => {
-        setIndex(selectedIndex);
-    };
-
     return (
         <div >
             <Carousel className="slide-container" variant="dark">

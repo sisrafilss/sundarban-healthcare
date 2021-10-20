@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useServices from '../../../hooks/useServices';
 import SectionTop from '../../Shared/SectionTop/SectionTop';
