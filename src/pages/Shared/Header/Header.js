@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <>
-            <Navbar className="nav-bg" ollapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar sticky="top" className="nav-bg" ollapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container fluid>
                     <Navbar.Brand href="#home"> <span className="logo-text">Sundarban</span> Healthcare </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

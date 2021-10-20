@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
@@ -46,6 +47,7 @@ const Register = () => {
 
                             <button type="submit" className="btn btn-submit">Register</button>
                             <p className="login-error mt-3 text-center"> {error} </p>
+                            
                             { user.email &&  <p className="login-success mt-3 text-center"> Registration Successfull! </p>}
 
                         </form>

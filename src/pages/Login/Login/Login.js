@@ -8,7 +8,7 @@ import './Login.css'
 const Login = () => {
 
     // Destructing the from useAuth custom hook
-    const { loginUserUsingEmailPassword, signInUsingGoogle, user, error, setUser, setError } = useAuth();
+    const { loginUserUsingEmailPassword, signInUsingGoogle, user, error, setUser, setError, setIsLoading } = useAuth();
 
     // It is for react hook form
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -33,7 +33,8 @@ const Login = () => {
                 history.push(redirect_uri);
             }).catch(() => {
                 setError(error?.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     }
 
     const handleEmailLogin = (email, password) => {
@@ -46,6 +47,8 @@ const Login = () => {
             })
             .catch((error) => {
                 setError(error?.message);
+            }).finally( () => {
+                setIsLoading(false);
             });
     }
 
